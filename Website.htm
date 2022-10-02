@@ -1,0 +1,133 @@
+<!--<!DOCTYPE html>
+<html>
+    <head>
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.17.5/xlsx.min.js"></script>
+        <h1>
+            Project - X
+        </h1>
+    </head>
+    <body>
+        <p>
+            What do we do?
+            The way our system works is the money that is comitted from our donors is donated to companies focusing
+            sustainable initiatives. 
+        </p>
+
+        <button id = "demo">click me</button>
+
+
+        <style>
+            p{
+                color : black;
+                font-size : 20px;
+                font-family : ComicSans;
+                text-align: center;
+            }
+            h1{
+                text-align : center;
+            }
+        </style>
+
+        <script>
+            document.getElementById("demo").onclick = function() {myFunction()};
+            function myFunction(){
+                document.getElementById("demo").innerHTML = "You clicked me";
+            }
+
+            var workbook = new  Excel.WorkBook();
+            workbook.xlsx.readFile('book1.xlsx')
+            .then(function(){
+                var worksheet = workbook.getWorksheet(sheet);
+                worksheet.eachRow({includeEmpty: true}, function(row, rowNumber){
+                    console.log("Row" + rowNumber + "=" + JSON.stringify(row.values));
+                });
+            });
+
+        </script>       
+    </body>
+
+</html>-->
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">  
+    <title>Excel to HTML Table | Javacodepoint</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.17.5/xlsx.min.js"></script>    
+  </head>
+  <body>
+    <h1>Upload an excel file to display in HTML Table</h1>
+    <input type="file" id="file_upload" />
+    <button onclick="upload()">Upload</button>  
+    <br>
+    <br>
+    <table id="display_excel_data" border="1"></table>
+    <script>
+     
+      // Method to upload a valid excel file
+      function upload() {
+        const file = ("C:\Users\rmwc9\OneDrive\Documents\Book1.xlsx");
+        var files = document.getElementById('file_upload').files;
+        if(files.length==0){
+          alert("Please choose any file...");
+          return;
+        }
+        var filename = files[0].name;
+        var extension = filename.substring(filename.lastIndexOf(".")).toUpperCase();
+        if (extension == '.XLS' || extension == '.XLSX') {
+            //Here calling another method to read excel file into json
+            excelFileToJSON(files[0]);
+        }else{
+            alert("Please select a valid excel file.");
+        }
+      }
+       
+      //Method to read excel file and convert it into JSON 
+      function excelFileToJSON(file){
+          try {
+            var reader = new FileReader();
+            reader.readAsBinaryString(file);
+            reader.onload = function(e) {
+ 
+                var data = e.target.result;
+                var workbook = XLSX.read(data, {
+                    type : 'binary'
+                });
+                var result = {};
+                var firstSheetName = workbook.SheetNames[0];
+                //reading only first sheet data
+                var jsonData = XLSX.utils.sheet_to_json(workbook.Sheets[firstSheetName]);
+                //displaying the json result into HTML table
+                displayJsonToHtmlTable(jsonData);
+                }
+            }catch(e){
+                console.error(e);
+            }
+      }
+       
+      //Method to display the data in HTML Table
+      function displayJsonToHtmlTable(jsonData){
+        var table=document.getElementById("display_excel_data");
+        if(jsonData.length>0){
+            var htmlData='<tr><th>Name</th><th>Amount</th><th>ID</th><th>Date/</th></tr>';
+            for(var i=0;i<jsonData.length;i++){
+                var row=jsonData[i];
+                htmlData+='<tr><td>'+row["ID"]+'</td><td>'+row["Name"]
+                      +'</td><td>'+row["Amount"]+'</td><td>'+row["Date"]+'</td></tr>';
+            }
+            table.innerHTML=htmlData;
+        }else{
+            table.innerHTML='There is no data in Excel';
+        }
+      }
+    </script>
+  </body>
+</html>
+
+
+
+
+
+
+
+
