@@ -19,7 +19,7 @@ def users():
             data = json.load(f)
             data.append({
                 "Name": "Hello",
-                "Amount": [result]
+                "Amount": ["10"]
             })
 
             return flask.jsonify(data)

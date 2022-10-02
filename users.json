@@ -5,10 +5,10 @@
     },
     {
         "Name": "Ryan Chisholm",
-        "Ampount": ["0.12"]
+        "Amount": ["0.12"]
     },
     {
         "Name": "Homer Simpson",
-        "pets": ["1.09"]
+        "Amount": ["1.09"]
     }
 ]
