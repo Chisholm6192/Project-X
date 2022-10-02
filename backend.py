@@ -1,3 +1,4 @@
+import math
 from flask import Flask, request
 import flask
 import json
@@ -17,8 +18,8 @@ def users():
         with open("users.json", "r") as f:
             data = json.load(f)
             data.append({
-                "username": "user4",
-                "pets": ["hamster"]
+                "Name": "Hello",
+                "Amount": [result]
             })
 
             return flask.jsonify(data)
@@ -34,4 +35,9 @@ def users():
 
 if __name__ == "__main__":
     app.run("localhost", 6969)
+
+
+name = str(input("Enter Name: "))
+amount = int(input("Enter Amount: "))
+result = math.ceil(amount)
 

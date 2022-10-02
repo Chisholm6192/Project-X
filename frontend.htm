@@ -1,12 +1,23 @@
 <html>
     <header>
         <title>Sprout</title>
+
+        <h1>
+            Sprout
+        </h1>
+        <h2>
+            <img src = "Sprout.png"/>
+        </h2>
     </header>
     <body>
-        <img src = "C:\Users\rmwc9\OneDrive\Pictures\Saved Pictures\Sprout.png"></img src>
-
         <p>
-            
+            <b>About us: </b>
+            <a>
+            We are a program designed to help people help themselves, by investing
+            in a brighter future for themselves. We help people who are also looking to invest
+            into somehting but don't know how to. We help people invest in something that matters
+            to everyone, a brighter future.
+            </a>
         </p>
 
         <!--<div>This is simple test to get data from a backend</div>-->
@@ -19,17 +30,15 @@
             <div id="sent-data-container"></div>
         </div>
         <hr>
-        <div>
+        <p>
             <button onclick="getUsers()">View List of Contributors</button>
-            <div id="result-container"></div>
-        </div>
+            <div>
+                <div id="result-container"></div>
+            </div>
+        </p>
     </body>
     <script>
         var xhr = null;
-
-        function Button(){
-            document.getElementById("button").innerHTML = "You clicked";
-        }
 
         getXmlHttpRequestObject = function () {
             if (!xhr) {
@@ -95,9 +104,46 @@
             getDate();
         })();*/
     </script>
-            <button id = "button" onclick = "Button()">Click me</button>
             <div style ="position: absolute; bottom: 5px;"><span>Last update: </span><span id="time-container"></span></div>
     <style>
+        h1{
+            font-family : 'Source Sans Pro', sans-serif;
+        }
+        img{
+            border : 1px solid;
+            border-radius : 4px;
+            padding : 5px;
+            vertical-align : bottom;
 
+        }
+        div{
+            font-size : 10px;
+        }
+        p{
+            text-align : center;
+            font-size : 15px;
+            font-family : 'Source Sans Pro', sans-serif;
+            border: none;
+            border-radius : 5px;
+            padding : 6px 18px;
+            overflow : hidden;
+            cursor : pointer;
+            user-select : none;
+            background-color : #04AA6D;
+            color : #ffffff
+        }
+        h1{
+            text-align : center;
+        }
+        b{
+            font-size : 20px;
+            text-align : center;
+        }
+        body{
+            background-image : url("BlueCar.jpg");
+        }
+        a{
+            text-align : center;
+        }
     </style>
 </html>

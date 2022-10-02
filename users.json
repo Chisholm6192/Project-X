@@ -1,14 +1,14 @@
 [
     {
-        "username": "user1",
-        "pets": ["dog"] 
+        "Name": "John Doe",
+        "Amount": ["0.56"] 
     },
     {
-        "username": "user2",
-        "pets": []
+        "Name": "Ryan Chisholm",
+        "Ampount": ["0.12"]
     },
     {
-        "username": "user3",
-        "pets": ["duck", "duck", "goose"]
+        "Name": "Homer Simpson",
+        "pets": ["1.09"]
     }
 ]
