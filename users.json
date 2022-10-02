@@ -1,6 +1,7 @@
 [
     {
         "Name": "John Doe",
+<<<<<<< Updated upstream
         "Amount": ["0.56"] 
     },
     {
@@ -12,3 +13,16 @@
         "Amount": ["1.09"]
     }
 ]
+=======
+        "Amount": 0.56
+    },
+    {
+        "Name": "Ryan Chisholm",
+        "Amount": 0.12
+    },
+    {
+        "Name": "Homer Simpson",
+        "Amount": 1.09
+    }
+]
+>>>>>>> Stashed changes
