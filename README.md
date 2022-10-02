@@ -1,2 +1,2 @@
-# Project X
- Hackathon 
+# Sprout
+ Hackathon Project

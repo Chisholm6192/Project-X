@@ -1,10 +1,10 @@
 from flask import Flask, request
 import flask
 import json
-#from flask_cors import CORS
+from flask_cors import CORS
 
 app = Flask(__name__)
-#CORS(app)
+CORS(app)
 
 @app.route("/")
 def hello():
@@ -34,3 +34,10 @@ def users():
 
 if __name__ == "__main__":
     app.run("localhost", 6969)
+
+
+def output():
+    amount = int(input("Input amount paid: "))
+    print(amount)
+    
+output()
