@@ -8,6 +8,7 @@ from flask_cors import CORS
 
 >>>>>>> Stashed changes
 
+
 app = Flask(__name__)
 CORS(app)
 
@@ -28,9 +29,13 @@ def users():
             })
 
             return flask.jsonify(data)
+<<<<<<< Updated upstream
 =======
         return flask.jsonify(data)
 
+>>>>>>> Stashed changes
+=======
+        return flask.jsonify(data)
 >>>>>>> Stashed changes
     if request.method == "POST":
         received_data = request.get_json()
@@ -51,6 +56,12 @@ name = str(input("Enter Name: "))
 amount = int(input("Enter Amount: "))
 result = math.ceil(amount)
 
+<<<<<<< Updated upstream
+=======
+#name = str(input("Enter Name: "))
+#amount = int(input("Enter Amount: "))
+#result = math.ceil(amount) - amount
+>>>>>>> Stashed changes
 =======
 #name = str(input("Enter Name: "))
 #amount = int(input("Enter Amount: "))
