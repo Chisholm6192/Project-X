@@ -1,16 +1,17 @@
 <html>
     <header>
         <title>Sprout</title>
+
+        <p>
+            
+        </p>
     </header>
     <body>
         <p>
             
         </p>
 
-
-
-
-        <div>This is simple test to get data from a backend</div>
+        <!--<div>This is simple test to get data from a backend</div>-->
         <div><span>Last update: </span><span id="time-container"></span></div>
         <div>
             <label for="data-input">Data to send:</label>
@@ -28,6 +29,10 @@
     </body>
     <script>
         var xhr = null;
+
+        function Button(){
+            document.getElementById("my button").innerHTML = "You clicked";
+        }
 
         getXmlHttpRequestObject = function () {
             if (!xhr) {
@@ -63,7 +68,7 @@
                 = date;
         }
 
-        function sendDataCallback() {
+        /*function sendDataCallback() {
             // Check response is ready or not
             if (xhr.readyState == 4 && xhr.status == 201) {
                 console.log("Data creation response received!");
@@ -91,8 +96,9 @@
         }
         (function () {
             getDate();
-        })();
+        })();*/
     </script>
+            <button id = "my button" onclick = "Button()">Click me</button>
     <style>
 
     </style>

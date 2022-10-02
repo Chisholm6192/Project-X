@@ -35,9 +35,3 @@ def users():
 if __name__ == "__main__":
     app.run("localhost", 6969)
 
-
-def output():
-    amount = int(input("Input amount paid: "))
-    print(amount)
-    
-output()
