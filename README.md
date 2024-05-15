@@ -8,4 +8,5 @@ October 1st and 2nd 2022
 We created a website and mobile app that shows contributions made by donors to support sustainable inititives around the world, our program automatically invests the money into a pre-determined sustainable organization, the site showcases the ideals of our business plan, as well as the top donors.
 
 Here is a link to the devpost submission where you can view our proposal and project
+
 https://devpost.com/software/the-green-initiative-z7p4dr
